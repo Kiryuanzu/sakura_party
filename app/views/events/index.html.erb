@@ -1,0 +1,13 @@
+<div class="home-title">
+  サクラ荘パーティ登録ふぉーむ（ベータ版)
+</div>
+<div class="discription">
+  毎月恒例のサクラ荘パーティのネット受付会場（仮）です。
+</div>
+
+
+<% if logged_in? %>
+こんにちは
+<% else %>
+<%= link_to "Twitterでログイン", '/auth/twitter' %>
+<% end %>
