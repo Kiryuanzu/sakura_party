@@ -4,8 +4,4 @@ class UsersController < ApplicationController
     @user = User.order("created_at DESC")
   end
 
-  private
-
-  def user_params
-  end
 end

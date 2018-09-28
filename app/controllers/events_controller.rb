@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   def index
     @event = Event.includes(:user).order("created_at DESC")
-    @attend = Attend.new
   end
 
   def show
@@ -9,18 +8,20 @@ class EventsController < ApplicationController
   end
   
   def new
-    return root_url unless current_user.organizer == true
+    return root_url unless current_user.organaizer == true
     @event = Event.new
   end
 
   def create
     @event = Event.create(event_params)
+    redirect_to root_url
   end
 
   def destroy
     if current_user.organizer == true
-    event = Event.find(params[:id])
-    event.destroy
+      event = Event.find(params[:id])
+      event.destroy
+    end
   end
 
   private

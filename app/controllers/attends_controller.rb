@@ -1,4 +1,8 @@
 class AttendsController < ApplicationController
+  def new 
+    @attend = Attend.new
+  end
+
   def create
     @attend = Attend.create(attend_params)
   end

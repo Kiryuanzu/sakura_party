@@ -1,0 +1,12 @@
+<%= form_with model: Event.new do |form| %>
+  <span>パーティ名</span>
+  <%= form.text_field :name %>
+
+  <span>パーティ内容</span>
+  <%= form.text_field :context %>
+
+  <span>パーティ日時</span>
+  <%= form.date_select :started_date %>
+  
+  <%= form.submit %>
+<% end %>

@@ -5,9 +5,11 @@
   毎月恒例のサクラ荘パーティのネット受付会場（仮）です。
 </div>
 
+<% @event.each do |event| %>
+  <p><%= event.name %></p>
+  <p><%= event.context %></p>
+  <p><%= event.started_date %></p>
+  <p>オーガナイザー: <%= event.user.user_name %> さん</p>
 
-<% if logged_in? %>
-こんにちは
-<% else %>
-<%= link_to "Twitterでログイン", '/auth/twitter' %>
+  <%= render "attends/new",  event: event %>
 <% end %>

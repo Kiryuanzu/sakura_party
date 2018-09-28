@@ -1,6 +1,6 @@
 class Attend < ApplicationRecord
-  validates :comment, length: (maximum: 140)
-  validates :mind
+  validates :comment, presence: true
+  validates :mind, presence: true
   belongs_to :user
   belongs_to :event
 end
