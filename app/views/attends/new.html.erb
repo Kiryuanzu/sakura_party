@@ -1,0 +1,6 @@
+<%= form_for(@attend) do |form| %>
+  <span>コメント(自由記述)</span>
+  <%= form.text_field :comment %>
+  <%= form.hidden_field :event_id %>
+  <%= form.submit("参加する") %>
+<% end %>

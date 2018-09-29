@@ -1,15 +1,17 @@
-<div class="home-title">
-  サクラ荘パーティ登録ふぉーむ（ベータ版)
-</div>
-<div class="discription">
-  毎月恒例のサクラ荘パーティのネット受付会場（仮）です。
-</div>
+<div class="sakura-home">
+  <div class="home-title">
+    サクラ荘パーティ登録ふぉーむ（ベータ版)
+  </div>
+  <div class="discription">
+    毎月恒例のサクラ荘パーティのネット受付会場（仮）です。
+  </div>
 
-<% @event.each do |event| %>
-  <p><%= event.name %></p>
-  <p><%= event.context %></p>
-  <p><%= event.started_date %></p>
-  <p>オーガナイザー: <%= event.user.user_name %> さん</p>
-
-  <%= render "attends/new",  event: event %>
-<% end %>
+  <% @events.each do |event| %>
+    <p>日時: <%= event.started_date %></p>
+    <p><%= event.name %></p>
+    <p><%= event.context %></p>
+    <p><%= event.started_date %></p>
+    <p>オーガナイザー: <%= event.user.user_name %> さん</p>
+    <p><%= link_to "参加申し込み", event_path(event.id) %></p>
+  <% end %>
+</div>

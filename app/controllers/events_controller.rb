@@ -1,10 +1,14 @@
 class EventsController < ApplicationController
   def index
-    @event = Event.includes(:user).order("created_at DESC")
+    @events = Event.includes(:user).order("created_at DESC")
   end
 
   def show
     @event = Event.find(params[:id])
+    @attends = @event.attends
+    @user_attend = Attend.find_by(user_id: current_user.id)
+    @attend = Attend.new
+    @attend.event_id = @event.id
   end
   
   def new
@@ -18,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if current_user.organizer == true
+    if current_user.organizer?
       event = Event.find(params[:id])
       event.destroy
     end

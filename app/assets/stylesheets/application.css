@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+
+header {
+  position: fixed;
+  background-color :white;
+  height: 60px;
+  margin: -8px 0px 0px 0px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.wrapper {
+  margin-top: 50px;
+}
+.nav-header {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.nav-list-ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  padding-right: 30px;
+}
+ @media screen and (max-width: 640px){
+  .nav-list-ul {
+    display: none;
+  }
+  }
+
+.nav-list-li {
+  margin-left: 16px;
+  list-style: none;
+  font-family: 'Rounded Mplus 1c';
+}
+.nav-list-li a {
+  text-decoration: none;
+}
+
+.attend-form {
+  padding-top: 60px;
+  width: 80%;
+}
+
+.attend-complete {
+  padding-top: 60px;
+}

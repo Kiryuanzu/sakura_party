@@ -1,8 +1,9 @@
 class AttendsController < ApplicationController
-  def new 
+  def new
+    @event = Event.find(params[:event_id])
     @attend = Attend.new
+    @attend.event_id = @event.id
   end
-
   def create
     @attend = Attend.create(attend_params)
   end
@@ -18,6 +19,6 @@ class AttendsController < ApplicationController
   private
 
   def attend_params
-    params.require(:attend).permit(:comment,:mind).merge(user_id: current_user.id)
+    params.require(:attend).permit(:comment, :mind, :event_id).merge(user_id: current_user.id)
   end
 end
