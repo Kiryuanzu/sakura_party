@@ -16,11 +16,54 @@
 @import url(https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
 @import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
 header {
   position: fixed;
   background-color :white;
   height: 60px;
   margin: -8px 0px 0px 0px;
+}
+
+.site-title {
+  padding-left: 20px;
+  font-family: 'Rounded Mplus 1c';  
+  font-size: 20px;
+}
+
+.site-title a {
+  text-decoration: none;
+  color :#ff607c;
+}
+
+.site-title a:visited {
+  text-decoration: none;
+  color :#ff607c;
+}
+
+.main {
+  padding-top: 80px;
+  width: 60%;
+  margin: 0 auto;
+  
+}
+#wrapper { 
+  min-height: 100%;
+}
+
+#footer {
+  height: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: -30px
+}
+
+.copyright{
+  padding-bottom: 2%;
 }
 
 .header-nav {
@@ -31,9 +74,6 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
-.wrapper {
-  margin-top: 50px;
-}
 .nav-header {
   margin-left: auto;
   padding-right: 20px;
@@ -67,4 +107,16 @@ header {
 
 .attend-complete {
   padding-top: 60px;
+}
+
+.attend-user {
+  display: flex;
+}
+
+.attend-user-name {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.attend-user-icon {
 }

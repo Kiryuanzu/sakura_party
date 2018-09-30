@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @attends = @event.attends
     @user_attend = Attend.find_by(user_id: current_user.id)
+    #Attendモデルののインスタンス新規生成
     @attend = Attend.new
     @attend.event_id = @event.id
   end

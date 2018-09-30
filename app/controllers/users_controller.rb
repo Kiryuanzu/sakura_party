@@ -4,4 +4,8 @@ class UsersController < ApplicationController
     @user = User.order("created_at DESC")
   end
 
+  def show
+    @user = User.find(params[:id])
+    @user_attends = @user.attends
+  end
 end

@@ -1,9 +1,18 @@
-<%= @event.name %>
-<%= @event.context %>
+<p>日時: <%= @event.started_date %>
+<p>パーティ名: <%= @event.name %></p>
+<p>パーティ内容<%= @event.context %></p>
 <% if @user_attend %>
   <% @attends.each do |attend| %>
-    <p><%= attend.user.user_name %>さん</p>
+    <div class="attend-user">
+      <div class="attend-user-icon">
+        <%= image_tag attend.user.image_url %>
+      </div>
+      <div class="attend-user-name">
+        <%= link_to attend.user.user_name.to_s + "さん", user_path(attend.user) %></p>
+      </div>
+    </div>
   <% end %>
+  <%= link_to "キャンセルする", attend_path(@user_attend.id), :method => :delete %>
 <% else %>
   <div class="attend-form">
     <%= form_for(@attend) do |f| %>

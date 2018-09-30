@@ -1,19 +1,12 @@
 class AttendsController < ApplicationController
-  def new
-    @event = Event.find(params[:event_id])
-    @attend = Attend.new
-    @attend.event_id = @event.id
-  end
   def create
     @attend = Attend.create(attend_params)
   end
 
   def destroy
-    attend = Attend.find(params[:id])
-    if attend.user_id == current_user.id
-      attend.destroy
-      redirect_to root_url
-    end
+    @attend = Attend.find(params[:id])
+    @attend.destroy
+    redirect_to root_url
   end
 
   private
