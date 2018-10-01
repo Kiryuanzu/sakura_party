@@ -1,6 +1,6 @@
 <p>日時: <%= @event.started_date %>
 <p>パーティ名: <%= @event.name %></p>
-<p>パーティ内容<%= @event.context %></p>
+<p>パーティ内容: <%= @event.context %></p>
 <% if @user_attend %>
   <% @attends.each do |attend| %>
     <div class="attend-user">

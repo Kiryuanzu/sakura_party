@@ -52,4 +52,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.assets.digest = false
+
+  config.slack_webhook_url = ENV['SLACK_WEBHOOK_URL']
 end
