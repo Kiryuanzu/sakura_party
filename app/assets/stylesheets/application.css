@@ -53,17 +53,19 @@ header {
 }
 #wrapper { 
   min-height: 100%;
+  background-color :white;
 }
 
 #footer {
   height: 10px;
   width: 100%;
   text-align: center;
-  margin-top: -30px
+  margin-top: 20px;
 }
 
 .copyright{
-  padding-bottom: 2%;
+  padding-bottom: 1%;
+  text-decoration: none;
 }
 
 .header-nav {
@@ -119,4 +121,90 @@ header {
 }
 
 .attend-user-icon {
+}
+
+.Party-info {
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  border: 3px double black;
+  background-color :white;
+  padding: 10px;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Rounded Mplus 1c'; 
+  padding-bottom: 10px;
+}
+
+.party-index {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.Party-info-time {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+.Party-info-name {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+.Party-info-context {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+.Party-info-organaizer {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+.party-attend {
+  text-align: center;
+}
+
+.party-attend-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+  border: double 4px black;
+  border-radius: 3px;
+  transition: .4s;
+  font-size: 1.2em;
+}
+
+.party-attend {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.party-attend-button a {
+  text-decoration: none;
+}
+
+.party-attend-button a:visited {
+  text-decoration: none;
+  color: black;
+}
+.party-attend-button:hover {
+  background: #fffbef;
+}
+
+.Party-info-box {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
