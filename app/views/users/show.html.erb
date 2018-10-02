@@ -1,6 +1,13 @@
-<div class="Userpage-title"><%= @user.user_name %>さんが参加したパーティ</div>
-  <% @user_attends.each do |attend| %>
-    <p>日時: <%= attend.event.started_date %></p>
-    <p>パーティ名: <%= attend.event.name %></p>
-    <p>パーティ内容: <%= attend.event.context %></p>
-  <% end %>
+  <div class="party-index">
+    <%= @user.user_name %>さんが参加したパーティ
+  </div>
+<% @user_attends.each do |attend| %>
+ <div class="Party-info">
+    <div class="Party-info-box">
+      <p class="Party-info-time">日時: <%= attend.event.started_date %></p></br>
+      <p class="Party-info-name">パーティ名: <%= attend.event.name %></p>
+      <p class="Party-info-context">パーティの主な内容:</br> <%= attend.event.context %></p>
+      <p class="Party-info-organaizer">オーガナイザー: <%= attend.event.user.user_name %> さん</p>
+    </div>
+  </div>
+<% end %>

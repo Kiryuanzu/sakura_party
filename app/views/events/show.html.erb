@@ -1,6 +1,17 @@
-<p>日時: <%= @event.started_date %>
-<p>パーティ名: <%= @event.name %></p>
-<p>パーティ内容: <%= @event.context %></p>
+  <div class="party-index">
+    パーティ情報
+  </div>
+ <div class="Party-info">
+    <div class="Party-info-box">
+      <p class="Party-info-time">日時: <%= @event.started_date %></p></br>
+      <p class="Party-info-name">パーティ名: <%= @event.name %></p>
+      <p class="Party-info-context">パーティの主な内容:</br> <%= @event.context %></p>
+      <p class="Party-info-organaizer">オーガナイザー: <%= @event.user.user_name %> さん</p>
+    </div>
+  </div>
+  <div class="attend-index">
+    参加者一覧<span class="attend-tips">(参加登録後に見ることができます)</span>
+  </div>
 <% if @user_attend %>
   <% @attends.each do |attend| %>
     <div class="attend-user">
@@ -12,13 +23,18 @@
       </div>
     </div>
   <% end %>
-  <%= link_to "キャンセルする", attend_path(@user_attend.id), :method => :delete %>
-<% else %>
-  <div class="attend-form">
-    <%= form_for(@attend) do |f| %>
-      <%= f.text_field :comment %>
-      <%= f.hidden_field :event_id %>
-      <%= f.submit "参加する" %>
-    <% end %>
+  <div class="cancel-attend">
+    <button class="cancel-attend-button">
+      <%= link_to "キャンセルする", attend_path(@user_attend.id), :method => :delete %>
+    </button>
+  </div>
+  <% else %>
+    <div class="attend-form-box">
+    <div class="attend-form">
+      <%= form_for(@attend) do |f| %>
+        <%= f.hidden_field :event_id %>
+        <%= f.submit "参加する", class: "party-attend-button" %>
+      <% end %>
+    </div>
   </div>
 <% end %>

@@ -6,6 +6,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag('apple-touch-icon.png',
+                     {:rel => 'apple-touch-icon',
+                      :sizes => '180x180',
+                      :type => 'image/png'}) %>
+    <meta name="description" content="サクラ荘パーティ参加登録サイト" >
+    <meta name="keywords" content="サクラ荘,サークルクラッシュ同好会,京都,オープンシェアハウス,Twitter">
+
+    <meta property="og:title" content="サクラ荘パーティ参加登録サイト">
+    <meta property="og:site_name" content="サクラ荘パーティ参加登録サイト">
+    <meta property="og:description" content="京都にあるオープンシェアハウス・サクラ荘で毎月恒例で行われるパーティや突発企画の参加登録Webサービスです"/>
+    <meta property="og:url" content="" />
+    <meta property="og:image" content=''/>
+    <meta property="og:type" content="summary" />
+
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="twitter:title" content="サクラ荘パーティ参加登録サイト">
+    <meta name="twitter:description" content="京都にあるオープンシェアハウス・サクラ荘で毎月恒例で行われるパーティや突発企画の参加登録Webサービスです">
+
+    <meta name="twitter:domain" content="sakura-party.com">
+    <meta name="twitter:image:src" content='' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
 <body>
@@ -14,10 +37,11 @@
   <nav class="nav-header">
     <ul class="nav-list-ul">
       <% if logged_in? %>
+      <li class="nav-list-li"><%= link_to "ログアウト", "/logout", class: "user-attend-index" %></li>
       <li class="nav-list-li"><%= link_to "参加したパーティ一覧", user_path(current_user), class: "user-attend-index" %></li>
       <% else %>
-        <li class="nav-list-li"><%= link_to "ログイン", "/auth/twitter" %></li>
-        <li class="nav-list-li"><a href="#">サクラ荘について</a></li>
+        <li class="nav-list-li"><%= link_to "ログイン", "/auth/twitter", class: "user-attend-index" %></li>
+        <li class="nav-list-li"><a href="https://twitter.com/sakurasou_kyoto", class="user-attend-index">サクラ荘について</a></li>
       <% end %>
     </ul>
   </nav>

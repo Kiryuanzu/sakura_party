@@ -14,8 +14,16 @@
       <p class="Party-info-organaizer">オーガナイザー: <%= event.user.user_name %> さん</p>
     </div>
     <div class="party-attend">
-      <button class="party-attend-button">
-        <%= link_to "参加申し込み / パーティ詳細情報", event_path(event.id) %>
+      <% if logged_in? %>
+        <button class="party-attend-button">
+          <%= link_to "参加申し込み / パーティ詳細情報", event_path(event.id) %>
+        </button>
+      <% else %>
+        <p>パーティに申し込むにはログインしてください</p>
+        <button class="party-attend-button">
+          <%= link_to "ログイン・新規登録(Twitterアカウントが必要です)", "/auth/twitter" %>
+        </button>
+      <% end %>
       </button>
     </div>
   </div>
