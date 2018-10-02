@@ -14,7 +14,7 @@
   <nav class="nav-header">
     <ul class="nav-list-ul">
       <% if logged_in? %>
-      <li class="nav-list-li"><%= link_to "参加したパーティ一覧", user_path(current_user) %></li>
+      <li class="nav-list-li"><%= link_to "参加したパーティ一覧", user_path(current_user), class: "user-attend-index" %></li>
       <% else %>
         <li class="nav-list-li"><%= link_to "ログイン", "/auth/twitter" %></li>
         <li class="nav-list-li"><a href="#">サクラ荘について</a></li>
