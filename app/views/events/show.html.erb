@@ -1,11 +1,18 @@
   <div class="party-index">
     パーティ情報
   </div>
+  <% if current_user == @event.user %>
+    <%= link_to "パーティを削除する", event_path(@event), :method => :delete %>
+  <% end %>
  <div class="Party-info">
     <div class="Party-info-box">
       <p class="Party-info-time">日時: <%= @event.started_date %></p></br>
       <p class="Party-info-name">パーティ名: <%= @event.name %></p>
       <p class="Party-info-context">パーティの主な内容:</br> <%= @event.context %></p>
+      <p class="Party-info-place">集合場所:<%= @event.place %></p>
+      <% if @user_attend %>
+        <p class="Party-info-contact">連絡方法:<%= @event.contact %></p>
+      <% end %>
       <p class="Party-info-organaizer">オーガナイザー: <%= @event.user.user_name %> さん</p>
     </div>
   </div>

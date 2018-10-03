@@ -22,14 +22,13 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if current_user.organizer?
-      event = Event.find(params[:id])
-      event.destroy
-    end
+    event = Event.find(params[:id])
+    event.destroy
+    redirect_to root_url
   end
 
   private
   def event_params
-    params.require(:event).permit(:name,:context,:started_date).merge(user_id: current_user.id)
+    params.require(:event).permit(:name,:context,:started_date,:place,:contact).merge(user_id: current_user.id)
   end
 end

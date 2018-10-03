@@ -3,7 +3,7 @@
     参加登録完了です！
   </div>
   <p class="home-link"><%= link_to "ホームに戻る", root_url %></p>
-  <p><%= link_to "パーティの詳細を確認(参加者や場所の確認、主催者へのコメントができるようになりました!", event_path(@attend.event.id) %></p>
+  <p><%= link_to "パーティの詳細を確認(参加者や場所の確認、主催者への連絡ができるようになりました!", event_path(@attend.event.id) %></p>
   <div class="share-icon-box">
     <div class="twitter-share-link">
       <a href="http://twitter.com/share?url=<%= root_url %>&amp;text=「<%= @attend.event.name.to_s %>」の参加登録を完了しました!&amp;related=kiryuanzu&amp;hashtags=sakura_party" id="tweet" target="_blank" name="tweet"><i class="fa fa-twitter-square t-customize"></i></a>

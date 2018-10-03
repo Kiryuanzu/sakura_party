@@ -2,6 +2,12 @@
   <div class="home-title">
     サクラ荘パーティ参加登録サイト（β版)
   </div>
+  <% if logged_in? && current_user.organaizer == true %>
+    <%= link_to "パーティを新規登録する", new_event_path %>
+  <% end %>
+  <div class="party-new">
+
+  </div>
   <div class="party-index">
     最新のパーティ情報
   </div>

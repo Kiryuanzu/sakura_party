@@ -1,7 +1,8 @@
 <%= form_with model: Event.new do |form| %>
-  <p>パーティ名: <%= form.text_field :name %></p>
-  <p>パーティ内容: <%= form.text_field :context %></p>
-
+  <p>パーティ名: <%= form.text_area :name, required: true %></p>
+  <p>パーティ内容: <%= form.text_area :context, required: true %></p>
+  <p>集合場所 <%= form.text_area :place, required: true %></p>
+  <p>連絡方法 <%= form.text_area :contact, required: true %></p>
   <p>パーティ日時: 
   <%= form.date_select :started_date %>
   <%= form.time_select :started_date %>
