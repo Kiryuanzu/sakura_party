@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    return root_url unless logged_in?
     @event = Event.find(params[:id])
     @attends = @event.attends
     @user_attend = Attend.find_by(user_id: current_user.id, event: @event.id)

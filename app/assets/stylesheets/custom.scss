@@ -311,6 +311,15 @@ header {
   display: flex;
 }
 
+.show-share-icon-box {
+  display: flex;
+  justify-content: flex-end:
+}
+
 .facebook_share_icon {
   margin-left: 10px;
+}
+
+.share-icon {
+  width: 80%;
 }
