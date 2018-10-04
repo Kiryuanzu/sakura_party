@@ -28,6 +28,9 @@ class EventsController < ApplicationController
     redirect_to root_url
   end
 
+  def secret
+  end
+
   private
   def event_params
     params.require(:event).permit(:name,:context,:started_date,:place,:contact).merge(user_id: current_user.id)
