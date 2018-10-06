@@ -5,25 +5,27 @@
     <%= link_to "パーティを削除する", event_path(@event), :method => :delete %>
     <%= link_to "パーティ情報を編集する", edit_event_path(@event) %>
   <% end %>
- <div class="Party-info">
+  <div class="Party-info">
     <div class="Party-info-box">
-      <p class="Party-info-time">開催日時: <%= @event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></br></p>
-      <p class="Party-info-name">パーティ名: <%= @event.name %></p>
-      <p class="Party-info-context">パーティの主な内容:</br> <%= @event.context %></p>
+      <p class="Party-info-name"><%= @event.name %></p>
+      <p class="Party-info-time">開催日時: <%= @event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></p>
       <p class="Party-info-place">集合場所:<%= @event.place %></p>
-      <% if @user_attend %>
-        <p class="Party-info-contact">連絡方法:</br><%= text_url_to_link(h(@event.contact)).html_safe %><p>
-      <% end %>
+      <p class="Party-info-context-name">パーティの主な内容</br>
+       <%= simple_format(@event.context, :class => "Party-info-context") %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= @event.user.user_name %> さん</p>
+      <% if @user_attend %>
+        <p class="Party-info-contact">連絡方法</br><%= simple_format(text_url_to_link(h(@event.contact)).html_safe) %><p>
+      <% end %>
+    </div>
       <div class="share-icon"%>
         <div class="show-share-icon-box">
           <div class="twitter-share-link">
-            <a href="http://twitter.com/share?url=<%= root_url %>&amp;text=「<%= @attend.event.name.to_s %>」の参加登録を完了しました!&amp;related=kiryuanzu&amp;hashtags=sakura_party" id="tweet" target="_blank" name="tweet"><i class="fa fa-twitter-square t-customize"></i></a>
+            <a href="http://twitter.com/share?url=<%= root_url %>&amp;text=「<%= @attend.event.name.to_s %>」の参加登録を完了しました!&amp;related=kiryuanzu&amp;hashtags=sakura_party" id="tweet" target="_blank" name="tweet"><div class="fa fa-twitter-square t-customize"></div></a>
           </div>
 
           <div class="facebook_share_icon" >
             <a href="https://www.facebook.com/share.php?u=<%= root_url_encode %>" target="_blank">
-              <i class="fa fa-facebook-square f-customize"></i>
+              <div class="fa fa-facebook-square f-customize"></div>
             </a>
           </div>
         </div>

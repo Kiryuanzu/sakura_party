@@ -1,9 +1,14 @@
 @import url(https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
 @import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+* {
+  margin: 0;
+  padding: 0;
+}
 
 html, body {
   height: 100%;
   margin: 0;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
 
@@ -168,35 +173,40 @@ header {
 
 .Party-info-time {
   text-align: left;
-  display: inline-block;
   font-size: 1.4em;
-  padding: 5px;
+  padding: 5px 5px 0px 5px;
+}
+
+.Party-info-time-context {
+  font-size: 1.7em;
 }
 
 .Party-info-name {
   text-align: left;
-  display: inline-block;
+  font-size: 1.7em;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.Party-info-context-name {
+  text-align: left;
   font-size: 1.4em;
   padding: 5px;
 }
 
 .Party-info-context {
-  text-align: left;
-  display: inline-block;
-  font-size: 1.4em;
-  padding: 5px;
+  margin-bottom: 15px;
 }
 
 .Party-info-place {
   text-align: left;
-  display: inline-block;
   font-size: 1.4em;
   padding: 5px;
+  margin-bottom: 15px;
 }
 
 .Party-info-contact {
   text-align: left;
-  display: inline-block;
   font-size: 1.4em;
   padding: 5px;
   word-break: break-all;
@@ -204,7 +214,6 @@ header {
 
 .Party-info-organaizer {
   text-align: left;
-  display: inline-block;
   font-size: 1.4em;
   padding: 5px;
 }
@@ -322,5 +331,6 @@ header {
 }
 
 .share-icon {
-  width: 80%;
+  width: 88%;
+  margin: 0 auto;
 }
