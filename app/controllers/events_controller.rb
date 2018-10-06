@@ -28,6 +28,22 @@ class EventsController < ApplicationController
     redirect_to root_url
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    redirect_to root_url if current_user != @event.user
+  end
+
+  def update
+    event = Event.find(params[:id])
+      render 'edit' if current_user != event.user
+
+      if event.update!(event_params)
+        redirect_to root_url
+      else 
+        render 'edit'
+      end
+  end
+
   def secret
   end
 

@@ -3,15 +3,16 @@
   </div>
   <% if current_user == @event.user %>
     <%= link_to "パーティを削除する", event_path(@event), :method => :delete %>
+    <%= link_to "パーティ情報を編集する", edit_event_path(@event) %>
   <% end %>
  <div class="Party-info">
     <div class="Party-info-box">
-      <p class="Party-info-time">日時: <%= @event.started_date %></p></br>
+      <p class="Party-info-time">開催日時: <%= @event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></br></p>
       <p class="Party-info-name">パーティ名: <%= @event.name %></p>
       <p class="Party-info-context">パーティの主な内容:</br> <%= @event.context %></p>
       <p class="Party-info-place">集合場所:<%= @event.place %></p>
       <% if @user_attend %>
-        <p class="Party-info-contact">連絡方法:<%= @event.contact %></p>
+        <p class="Party-info-contact">連絡方法:</br><%= text_url_to_link(h(@event.contact)).html_safe %><p>
       <% end %>
       <p class="Party-info-organaizer">オーガナイザー: <%= @event.user.user_name %> さん</p>
       <div class="share-icon"%>

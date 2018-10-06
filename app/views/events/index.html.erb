@@ -14,7 +14,7 @@
   <% @events.each do |event| %>
   <div class="Party-info">
     <div class="Party-info-box">
-      <p class="Party-info-time">日時: <%= event.started_date %></p></br>
+      <p class="Party-info-time">開催日時: <%= event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></p></br>
       <p class="Party-info-name">パーティ名: <%= event.name %></p>
       <p class="Party-info-context">パーティの主な内容:</br> <%= event.context %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= event.user.user_name %> さん</p>

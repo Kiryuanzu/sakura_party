@@ -4,7 +4,7 @@
 <% @user_attends.each do |attend| %>
  <div class="Party-info">
     <div class="Party-info-box">
-      <p class="Party-info-time">日時: <%= attend.event.started_date %></p></br>
+      <p class="Party-info-time">開催日時: <%= attend.event.started_date %></p></br>
       <p class="Party-info-name">パーティ名: <%= attend.event.name %></p>
       <p class="Party-info-context">パーティの主な内容:</br> <%= attend.event.context %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= attend.event.user.user_name %> さん</p>
