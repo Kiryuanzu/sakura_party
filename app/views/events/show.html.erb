@@ -1,6 +1,4 @@
-  <div class="party-index">
-    パーティ情報
-  </div>
+
   <% if current_user == @event.user %>
     <%= link_to "パーティを削除する", event_path(@event), :method => :delete %>
     <%= link_to "パーティ情報を編集する", edit_event_path(@event) %>
@@ -29,9 +27,8 @@
             </a>
           </div>
         </div>
-  </div>
+      </div>
     </div>
-  </div>
   <div class="attend-index">
     参加者一覧<span class="attend-tips">(参加登録後に見ることができます)</span>
   </div>
