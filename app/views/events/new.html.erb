@@ -1,10 +1,10 @@
 <%= form_with model: Event.new do |form| %>
-  <p>パーティ名: <%= form.text_area :name, required: true %></p>
-  <p>パーティ内容: <%= form.text_area :context, required: true %></p>
-  <p>集合場所 <%= form.text_area :place, required: true %></p>
-  <p>連絡方法 <%= form.text_area :contact, required: true %></p>
-  <p>パーティ日時: 
+  <div class="party-name-form">パーティ名: <%= form.text_area :name, required: true %></div>
+  <div class="party-context-form">パーティ内容: <%= form.text_area :context, required: true %></div>
+  <div class="party-place-form">集合場所 <%= form.text_area :place, required: true %></div>
+  <div class="party-contact-form">連絡方法 <%= form.text_area :contact, required: true %></div>
+  <div>パーティ日時: 
   <%= form.datetime_select :started_date %>
-  </p>
-  <p><%= form.submit %></p>
+  </div>
+  <div><%= form.submit %></div>
 <% end %>
