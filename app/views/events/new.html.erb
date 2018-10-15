@@ -1,8 +1,8 @@
 <%= form_with model: Event.new do |form| %>
-  <div class="party-name-form">パーティ名: <%= form.text_area :name, required: true %></div>
-  <div class="party-context-form">パーティ内容: <%= form.text_area :context, required: true %></div>
-  <div class="party-place-form">集合場所 <%= form.text_area :place, required: true %></div>
-  <div class="party-contact-form">連絡方法 <%= form.text_area :contact, required: true %></div>
+  <div class="party-name-form">パーティ名: <%= form.text_area :name, required: true, placeholder: "50文字以内" %></div>
+  <div class="party-context-form">パーティ内容: <%= form.text_area :context, required: true, placeholder: "1300字以内" %></div>
+  <div class="party-place-form">集合場所 <%= form.text_area :place, required: true, placeholder: "140字以内" %></div>
+  <div class="party-contact-form">連絡方法 <%= form.text_area :contact, required: true, placeholder: "140字以内" %></div>
   <div>パーティ日時: 
   <%= form.datetime_select :started_date %>
   </div>
