@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'slack-notifier'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

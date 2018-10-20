@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate, only: [:show]
   def index
-    @events = Event.includes(:user).order("created_at DESC")
+    @events = Event.includes(:user).order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show
