@@ -19,7 +19,7 @@
        <%= simple_format(event.context, :class => "Party-info-context") %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= event.user.user_name %> さん</p>
       <% if event.event_image.attached? %>
-        <%= image_tag event.event_image %>
+        <%= image_tag url_for(event.event_image.variant(resize: '128x128')) %>
       <% end %>
     </div>
     <div class="party-attend">
