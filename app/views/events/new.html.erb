@@ -6,5 +6,8 @@
   <div>パーティ日時: 
   <%= form.datetime_select :started_date %>
   </div>
+  <div>パーティのイメージ画像:
+    <%= form.file_field :event_image %>
+  </div>
   <div><%= form.submit %></div>
 <% end %>

@@ -5,5 +5,6 @@ class Event < ApplicationRecord
   validates :contact, length: {maximum: 240}
   belongs_to :user
   has_many :attends, :dependent => :delete_all
+  has_one_attached :event_image
 end
  

@@ -31,6 +31,9 @@ gem 'omniauth-twitter'
 gem 'slack-notifier'
 gem 'font-awesome-rails', '~> 4.7.0.4'
 gem 'kaminari'
+gem 'bootsnap', require: false
+gem 'activestorage', '~> 5.2.0' 
+gem 'aws-sdk-s3'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
