@@ -14,6 +14,9 @@
       <% if @user_attend %>
         <p class="Party-info-contact">連絡方法</br><%= simple_format(text_url_to_link(h(@event.contact)).html_safe) %><p>
       <% end %>
+      <% if @event.event_image.attached? %>
+        <%= image_tag url_for(@event.event_image.variant(resize: '200x300')) %>
+      <% end %>
     </div>
       <div class="share-icon"%>
         <div class="show-share-icon-box">
