@@ -34,6 +34,7 @@ gem 'kaminari'
 gem 'bootsnap', require: false
 gem 'aws-sdk-s3'
 gem 'mini_magick', '~> 4.8'
+gem 'webpacker', github: 'rails/webpacker'
 
 
 # Use Redis adapter to run Action Cable in production
