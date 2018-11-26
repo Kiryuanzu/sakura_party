@@ -39,7 +39,7 @@
   <% @attends.each do |attend| %>
     <div class="attend-user">
       <div class="attend-user-icon">
-        <%= image_tag attend.user.image_url %>
+        <%= image_tag attend.user.image_url, onerror: 'this.error=null;this.src="sakurasou.png"' %>
       </div>
       <div class="attend-user-name">
         <%= link_to attend.user.user_name.to_s + "さん", user_path(attend.user) %></p>
@@ -61,3 +61,7 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  document.
+</script>
