@@ -121,6 +121,11 @@ header {
   margin-left: 5px;
 }
 
+.UserIcon {
+  width: 48px;
+  height: 48px;
+}
+
 .attend-user-icon {
 }
 
@@ -268,7 +273,6 @@ header {
   margin-top: 10px;
   margin-bottom: 10px;
   @media screen and (max-width: 640px) {
-  width: 80%;
   font-size: 1.0em;
   }
 }
