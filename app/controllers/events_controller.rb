@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
+    slack_event_notify(@event)
     redirect_to root_url
   end
 
