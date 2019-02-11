@@ -8,6 +8,9 @@
       <p class="Party-info-name"><%= @event.name %></p>
       <p class="Party-info-time">開催日時: <%= @event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></p>
       <p class="Party-info-place">集合場所:<%= @event.place %></p>
+      <% if @event.capacity.present? %>
+        <p class="Party-info-capacity">定員人数: <%= @event.capacity %>名</p>
+      <% end %>
       <p class="Party-info-context-name">パーティの主な内容</br>
        <%= simple_format(@event.context, :class => "Party-info-context") %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= @event.user.user_name %> さん</p>
@@ -42,7 +45,7 @@
         <%= image_tag attend.user.image_url, onerror: 'this.error=null;this.src="https://pbs.twimg.com/profile_images/618780327490617348/cI-uWhCJ_400x400.jpg"', class: "UserIcon" %>
       </div>
       <div class="attend-user-name">
-        <%= link_to attend.user.user_name.to_s + "さん", user_path(attend.user) %></p>
+        <%= link_to attend.user.user_name, "https://twitter.com/search?q=" + attend.user.user_name.to_s %></p>
       </div>
     </div>
   <% end %>
@@ -52,16 +55,16 @@
     </button>
   </div>
   <% else %>
-    <div class="attend-form-box">
-    <div class="attend-form">
-      <%= form_for(@attend) do |f| %>
-        <%= f.hidden_field :event_id %>
-        <%= f.submit "参加する", class: "party-attend-button" %>
+      <% if !@event.capacity.present? || @event.capacity > @attends.count %>
+        <div class="attend-form-box">
+        <div class="attend-form">
+          <%= form_for(@attend) do |f| %>
+            <%= f.hidden_field :event_id %>
+            <%= f.submit "参加する", class: "party-attend-button" %>
+          <% end %>
+        </div>
+      <% else %>
+        申し訳ございません。定員人数に達したため募集を締め切りました。
       <% end %>
-    </div>
   </div>
 <% end %>
-
-<script>
-  document.
-</script>

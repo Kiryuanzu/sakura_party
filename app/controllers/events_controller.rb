@@ -19,7 +19,11 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
-    slack_event_notify(@event)
+    if Rails.env == "production"
+      notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url)
+      message = @event.user.user_name.to_s + "さんが" + "パーティ情報「" + @event.event.name　+"」を登録しました!"
+      notifier.ping(message)
+    end
     redirect_to root_url
   end
 
@@ -50,6 +54,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name,:context,:started_date,:place,:contact,:event_image).merge(user_id: current_user.id)
+    params.require(:event).permit(:name, :context, :started_date, :place, :contact, :event_image, :capacity).merge(user_id: current_user.id)
   end
 end

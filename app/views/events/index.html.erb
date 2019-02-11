@@ -14,7 +14,10 @@
     <div class="Party-info-box">
       <p class="Party-info-name"><%= event.name %></p>
       <p class="Party-info-time">開催日時: <%= event.started_date.strftime('%Y年%m月%d日 %H:%M~') %></p>
-      <p class="Party-info-place">集合場所:<%= event.place %></p>
+      <% if event.capacity.present? %>
+        <p class="Party-info-capacity">定員人数: <%= event.capacity %>名</p>
+      <% end %>
+      <p class="Party-info-place">集合場所: <%= event.place %></p>
       <p class="Party-info-context-name">パーティの主な内容</br>
        <%= simple_format(event.context, :class => "Party-info-context") %></p>
       <p class="Party-info-organaizer">オーガナイザー: <%= event.user.user_name %> さん</p>
