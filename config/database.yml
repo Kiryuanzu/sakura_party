@@ -83,3 +83,7 @@ production:
   database: sakura_party_production
   username: sakura_party
   password: <%= ENV['SAKURA_PARTY_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
