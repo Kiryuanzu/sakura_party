@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create(event_params)
-    if Rails.env == "production"
+    if Rails.env == 'production'
       notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url)
       message = @event.user.user_name.to_s + "さんが" + "パーティ情報「" + @event.event.name　+"」を登録しました!"
       notifier.ping(message)
