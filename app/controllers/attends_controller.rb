@@ -14,7 +14,7 @@ class AttendsController < ApplicationController
       notifier = Slack::Notifier.new(Rails.application.config.slack_webhook_url)
       @numbers = @attend.event.attends.size - 1 
       message = @attend.user.user_name.to_s + "さんが「" + @attend.event.name + "」の参加をキャンセルしました。現在のパーティ参加者は" + @numbers.to_s + "人です。"
-      notifier.ping(message)   
+      notifier.ping(message)
     end
     @attend.destroy
     redirect_to root_url
