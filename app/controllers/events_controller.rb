@@ -30,21 +30,17 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
-    if event.event_image.attached?
-      @event.event_image.attach(params[:event_image])
-    end
     redirect_to root_url if current_user != @event.user
   end
 
   def update
     event = Event.find(params[:id])
     render 'edit' if current_user != event.user
-
-      if event.update!(event_params)
-        redirect_to root_url
-      else 
-        render 'edit'
-      end
+    if event.update(event_params)
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   def secret

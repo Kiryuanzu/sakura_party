@@ -7,7 +7,7 @@
   <%= form.datetime_select :started_date %>
   </p>
   <div>定員人数
-    <%= number_field_tag 'event[capacity]', in: 1...999 %>
+    <%= number_field_tag 'event[capacity]', 20, in: 1...999 %>
   </div>
   <div>パーティのイメージ画像:
     <%= form.file_field :event_image %>

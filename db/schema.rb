@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_111329) do
     t.datetime "updated_at", null: false
     t.string "place"
     t.string "contact"
-    t.integer "capacity"
+    t.integer "capacity", default: 20
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 

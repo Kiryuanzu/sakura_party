@@ -7,6 +7,5 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :attends, :dependent => :delete_all
   has_one_attached :event_image
-
 end
  
