@@ -35,7 +35,9 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-    event.event_image.attach(params[:event_image])
+    if event.event_image.attached?
+      event.event_image.attach(params[:event_image])
+    end
     render 'edit' if current_user != event.user
 
       if event.update!(event_params)
