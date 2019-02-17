@@ -35,7 +35,8 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-      render 'edit' if current_user != event.user
+    event.event_image.attach(params[:event_image])
+    render 'edit' if current_user != event.user
 
       if event.update!(event_params)
         redirect_to root_url
