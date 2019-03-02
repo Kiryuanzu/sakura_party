@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   validates :capacity, numericality: { only_integer: true, grater_than_or_equal_to: 0 }
   belongs_to :user
   has_many :attends, :dependent => :delete_all
+  has_many :posts, :dependent => :delete_all
   has_one_attached :event_image
 end
  

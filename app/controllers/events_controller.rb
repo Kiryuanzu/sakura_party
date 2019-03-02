@@ -10,6 +10,7 @@ class EventsController < ApplicationController
     @user_attend = Attend.find_by(user_id: current_user.id, event: @event.id)
     @attend = Attend.new
     @attend.event_id = @event.id
+    @post = Post.new
   end
   
   def new
@@ -47,6 +48,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.require(:event).permit(:name, :context, :started_date, :place, :contact, :event_image, :capacity).merge(user_id: current_user.id)
   end

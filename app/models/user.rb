@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :attends
   has_many :events
   has_many :posts
+
   def self.find_or_create_from_auth(auth)
     provider = auth[:provider]
     uid = auth[:uid]
